@@ -1,0 +1,7 @@
+@bot.command()
+@commands.has_permissions(ban_members=True)
+async def ban(ctx, member:discord.Member, *, reason=None):
+      if reason == None:
+        reason="no reason provided"
+        await ctx.guild.ban(member)
+        await ctx.send(f"User {member.mention} has been banned for {reason}")
